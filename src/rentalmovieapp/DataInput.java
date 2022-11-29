@@ -21,9 +21,9 @@ public class DataInput {
         List<String> lines = new ArrayList<>();
         String inputLine = myReader.readLine();
         
-//        while ((inputLine = myReader.readLine()) != null) {
+        while ((inputLine = myReader.readLine()) != null) {
             lines.add(inputLine);
-//        }     
+        }     
         return lines;
     }
 }
