@@ -15,9 +15,9 @@ public class CSVProcessor {
 
     public void processCSV() throws IOException {
         System.out.println("LOADING...");
-        String inputFile = "movies_metadata.csv";
+        String inputFile = "movies_test.csv";
         DataInput dataInput = new DataInput();
         List<String> lines = dataInput.InputData(inputFile);
-        System.out.println(lines);
+        System.out.println(lines.get(1));
     }
 }
