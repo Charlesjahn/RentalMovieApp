@@ -2,6 +2,8 @@ package Main;
 
 import Authentication.Login;
 import Authentication.loginValidadeInterface;
+import Menu.MenuLoginSing;
+import Menu.MenuLoginSingInterface;
 import java.io.IOException;
 import java.util.Scanner;
 import rentalmovieapp.CSVProcessor;
@@ -17,8 +19,13 @@ public class RentalMovieApp {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        loginValidadeInterface loginValidate = new Login();
         Scanner myKB = new Scanner(System.in);
+        MenuLoginSing loginSignOption = new MenuLoginSing();
+        loginValidadeInterface loginValidate = new Login();
+        
+        while(!loginSignOption.MenuLoginSing()){
+        }
+        
         String userName = "null";
         String userPassword = "null";
         while (!loginValidate.loginValidate(userName, userPassword)) {
