@@ -6,7 +6,7 @@ package Menu;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn 2020315
  */
 public class TestOption {
 

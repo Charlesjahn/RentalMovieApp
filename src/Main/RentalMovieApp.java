@@ -3,7 +3,6 @@ package Main;
 import Authentication.Login;
 import Authentication.loginValidadeInterface;
 import Menu.MenuLoginSing;
-import Menu.MenuLoginSingInterface;
 import java.io.IOException;
 import java.util.Scanner;
 import rentalmovieapp.CSVProcessor;

@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn 2020315
  */
 public class MenuLoginSing{
 
