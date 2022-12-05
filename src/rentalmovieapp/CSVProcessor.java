@@ -18,6 +18,6 @@ public class CSVProcessor {
         String inputFile = "movies_test.csv";
         DataInput dataInput = new DataInput();
         List<String> lines = dataInput.InputData(inputFile);
-        System.out.println(lines.get(1));
+        System.out.println(lines.get(0));
     }
 }
