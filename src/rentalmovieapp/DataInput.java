@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn 2020315
  */
 public class DataInput {
     public List<String> InputData(String InputFile) throws FileNotFoundException, IOException {

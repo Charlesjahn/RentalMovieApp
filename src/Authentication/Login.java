@@ -7,7 +7,7 @@ package Authentication;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn 2020315
  */
 public class Login implements loginValidadeInterface {
         

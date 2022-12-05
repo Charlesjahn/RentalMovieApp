@@ -15,7 +15,7 @@ public interface loginValidadeInterface {
      *
      * @param password
      * @param realPassword
-     * @return true is param matchs
+     * @return true is param match
      */
     public boolean passwordValidade(String password, String realPassword);
 
@@ -23,7 +23,7 @@ public interface loginValidadeInterface {
      *
      * @param password
      * @param realPassword
-     * @return true is param matchs
+     * @return true is param match
      */
     public boolean userValidade(String password, String realPassword);
 
