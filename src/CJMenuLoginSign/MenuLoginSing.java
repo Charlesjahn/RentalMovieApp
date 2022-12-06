@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class MenuLoginSing {
 
     private int option;
-    private Scanner myKB = new Scanner(System.in);
+    private final Scanner myKB = new Scanner(System.in);
 
     public boolean MenuLoginSing() {
         System.out.println("1: Login");
