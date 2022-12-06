@@ -2,11 +2,10 @@ package Main;
 
 import CJAuthentication.Login;
 import CJAuthentication.loginValidadeInterface;
-import CJMenu.MenuLoginSing;
+import CJMenuLoginSign.MenuLoginSing;
 import java.io.IOException;
 import java.util.Scanner;
 import CJFileIO.CSVProcessor;
-import java.awt.BorderLayout;
 
 /**
  *
@@ -22,13 +21,20 @@ public class RentalMovieApp {
         Scanner myKB = new Scanner(System.in);
         loginValidadeInterface loginValidate = new Login();
 
-        /*Here will Show the menu to login or Sign
+        /*
+        *Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping
          */
         boolean userValidateLogin = false;
         int menuOption = 0;
         menuOption = loopMenuLoginSign(menuOption);
-
+        
+        /* 
+        * This switch will direct the user for the menu option chosen 
+        * case 1 Login validation
+        * case 2 Sign User
+        * case 3 finish app
+        */
         switch (menuOption) {
             case 1:
                 String userName = "null";
