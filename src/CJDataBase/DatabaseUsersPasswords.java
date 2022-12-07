@@ -25,7 +25,7 @@ public class DatabaseUsersPasswords {
             stmt.execute(
                     "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                             + "userName VARCHAR(30) NOT NULL,"
-                            + "id INT NOT NULL PRIMARY KEY,"
+                            + "idUser INT NOT NULL PRIMARY KEY AUTO_INCREMENT,"
                             + "password TEXT(15));"
             );
         } catch (SQLException e) {
