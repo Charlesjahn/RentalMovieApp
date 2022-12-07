@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package CJDataBase;
 
 import java.sql.Connection;
@@ -12,7 +8,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn
  */
 public class DataBaseInfoUserPass {
 
@@ -20,11 +16,12 @@ public class DataBaseInfoUserPass {
     private int idUser;
     private String passwordUser;
 
-    public boolean DBInfoUserPass(String DB_URL, String USER, String PASS, String tableName) {
+    public boolean DBInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + ";");
+            System.out.println(userName +"+++++"+ userPass);
+            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE 'userName' = " + userName + " AND 'password' = " + userPass + ";");
             while (rs.next()) {
                 this.name = rs.getString("userName");
                 this.idUser = rs.getInt("idUser");
@@ -32,6 +29,7 @@ public class DataBaseInfoUserPass {
             }
             return true;
         } catch (SQLException e) {
+            System.out.println("User invalid");
             e.printStackTrace();
             return false;
         }
