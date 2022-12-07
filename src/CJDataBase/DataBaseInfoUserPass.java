@@ -21,7 +21,7 @@ public class DataBaseInfoUserPass {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
             System.out.println(userName +"+++++"+ userPass);
-            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE 'userName' = " + userName + " AND 'password' = " + userPass + ";");
+            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "' AND password = '" + userPass + "';");
             while (rs.next()) {
                 this.name = rs.getString("userName");
                 this.idUser = rs.getInt("idUser");
