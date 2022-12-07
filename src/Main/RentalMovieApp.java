@@ -17,6 +17,9 @@ public class RentalMovieApp {
     /**
      * @param args the command line arguments
      * @throws java.io.IOException
+     * @throws java.lang.ClassNotFoundException
+     * @throws java.lang.InstantiationException
+     * @throws java.lang.IllegalAccessException
      */
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Scanner myKB = new Scanner(System.in);
