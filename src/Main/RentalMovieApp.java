@@ -1,6 +1,6 @@
 package Main;
 
-import CJDataBase.DatabaseCreating;
+import CJDataBase.DatabaseMainProcessor;
 import CJAuthentication.Login;
 import CJAuthentication.loginValidadeInterface;
 import java.io.IOException;
@@ -26,8 +26,10 @@ public class RentalMovieApp {
         loginValidadeInterface loginValidate = new Login();
         boolean userValidateLogin = false;
         int menuOption = 0;
-        DatabaseCreating databaseCreating = new DatabaseCreating();
+        DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.DatabaseCreating();
+//        databaseCreating.saveInfo("admin", "admin");
+        databaseCreating.searchInfo("admin", "admin");
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping
