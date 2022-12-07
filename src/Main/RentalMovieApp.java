@@ -2,10 +2,10 @@ package Main;
 
 import CJAuthentication.Login;
 import CJAuthentication.loginValidadeInterface;
-import CJMenuLoginSign.MenuLoginSing;
 import java.io.IOException;
 import java.util.Scanner;
 import CJFileIO.CSVProcessor;
+import CJMenuLoginSign.LoopingMenuLoginSignValidation;
 
 /**
  *
@@ -20,53 +20,47 @@ public class RentalMovieApp {
     public static void main(String[] args) throws IOException {
         Scanner myKB = new Scanner(System.in);
         loginValidadeInterface loginValidate = new Login();
-
-        /*
-        *Here will Show the menu to login, Sign or Exir
-        * While not insert valid input it will keep looping
-         */
         boolean userValidateLogin = false;
         int menuOption = 0;
-        menuOption = loopMenuLoginSign(menuOption);
         
-        /* 
-        * This switch will direct the user for the menu option chosen 
-        * case 1 Login validation
-        * case 2 Sign User
-        * case 3 finish app
+        /*
+        * Here will Show the menu to login, Sign or Exir
+        * While not insert valid input it will keep looping
+        * This while will loop until be break with one of the option
         */
-        switch (menuOption) {
-            case 1:
-                String userName = "null";
-                String userPassword = "null";
-                if (!userValidateLogin) {
+        while (menuOption == 0) {
+            LoopingMenuLoginSignValidation loopMenuLoginSignVariable = new LoopingMenuLoginSignValidation();
+            menuOption = loopMenuLoginSignVariable.loopMenuLoginSignValidation(menuOption);
+
+            switch (menuOption) {
+                case 1:
                     System.out.println("User name: ");
-                    userName = myKB.nextLine();
+                    String userName = myKB.nextLine();
+                    System.out.println(userName);
                     System.out.println("Password: ");
-                    userPassword = myKB.nextLine();
-                    if (!loginValidate.loginValidate(userName, userPassword)) {
-                        menuOption = loopMenuLoginSign(0);
+                    String userPassword = myKB.nextLine();
+                    System.out.println(userPassword);
+                    if (!userValidateLogin) {
+                        if (!loginValidate.loginValidate(userName, userPassword)) {
+                            menuOption = 0;
+                        }
                     }
-                }
-                break;
-            case 2:
-                System.out.println("Under contrustion");
-            case 3:
-                break;
+                    System.out.println(menuOption);
+                    break;
+                case 2:
+                    System.out.println("Under contrustion");
+                    menuOption = 0;
+                    break;
+                case 3:
+                    break;
+            }
         }
+        /*
+        * If user is valid it here will be the menu for rent movies
+         */
         if (userValidateLogin) {
             CSVProcessor csvProcessor = new CSVProcessor();
             csvProcessor.processCSV();
         }
-    }
-
-    public static int loopMenuLoginSign(int n) {
-        MenuLoginSing loginSignOption = new MenuLoginSing();
-        while (!loginSignOption.optionValid(n)) {
-            while (!loginSignOption.MenuLoginSing()) {
-            }
-            n = loginSignOption.getOption();
-        }
-        return loginSignOption.getOption();
     }
 }
