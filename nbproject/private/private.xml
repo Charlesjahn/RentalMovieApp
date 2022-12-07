@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJAuthentication/Login.java</file>
+            <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJMenuLoginSign/LoopingMenuLoginSignValidation.java</file>
+            <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJDataBase/DatabaseMainProcessor.java</file>
             <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/Main/RentalMovieApp.java</file>
             <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJMenuLoginSign/MenuLoginSing.java</file>
+            <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJDataBase/DatabaseTableCreating.java</file>
+            <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJDataBase/CJSaveInfoUserPass.java</file>
+            <file>file:/C:/Users/charl/Documents/NetBeansProjects/RentalMovieApp/src/CJDataBase/DataBaseInfoUserPass.java</file>
         </group>
     </open-files>
 </project-private>
