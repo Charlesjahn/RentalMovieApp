@@ -1,4 +1,4 @@
-package DataBase;
+package CJDataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
