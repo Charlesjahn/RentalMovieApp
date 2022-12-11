@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CJDataBase;
+package DataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,6 +12,7 @@ import java.sql.Statement;
 /**
  *
  * @author charl
+ * @Author Gabriel Antoniolli - Movie Database
  */
 public class DatabaseTableCreating {
 
@@ -27,6 +28,16 @@ public class DatabaseTableCreating {
                     + "idUser INT NOT NULL PRIMARY KEY AUTO_INCREMENT,"
                     + "userName VARCHAR(30) NOT NULL,"
                     + "password TEXT(15) NOT NULL);"
+            );
+            stmt.execute(
+                    "CREATE TABLE IF NOT EXISTS movies ("
+                    + "id INT NOT NULL PRIMARY KEY,"
+                    + "original_title VARCHAR(45) NOT NULL,"
+                    + "release_date VARCHAR(30) NOT NULL,"
+                    + "runtime VARCHAR(30) NOT NULL,"
+                    + "title VARCHAR(45) NOT NULL,"
+                    + "original_language VARCHAR(5) NOT NULL);"
+                    
             );
         } catch (SQLException e) {
             e.printStackTrace();
