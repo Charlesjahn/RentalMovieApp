@@ -6,7 +6,7 @@ package CJMenuLoginSign;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn
  */
 public class LoopingMenuLoginSignValidation {
 

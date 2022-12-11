@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn
  */
 public class SaveInfoUserPass {
 

@@ -7,12 +7,11 @@ import java.io.IOException;
 import java.util.Scanner;
 import CJFileIO.CSVProcessor;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
-import GADataBase.DatabaseTableCreatingMovies;
-import GAFile.SavingMovieTable;
 
 /**
  *
  * @author Charles Franklin Jahn 2020315
+ * @Author Gabriel Antoniolli - Movie Database
  */
 public class RentalMovieApp {
 
@@ -34,11 +33,11 @@ public class RentalMovieApp {
         databaseCreating.DatabaseCreating();
 //        databaseCreating.saveInfo("admin", "admin");
         databaseCreating.searchInfo("admin", "admin");
-
-        SavingMovieTable databaseCreatingTableMove = new SavingMovieTable();
-        databaseCreating.setTableName("movies");
-        databaseCreating.DatabaseCreating();
-        databaseCreatingTableMove.loadMovieTable();
+        
+//        SavingMovieTable databaseCreatingTableMove = new SavingMovieTable();
+//        databaseCreating.setTableName("movies");
+//        databaseCreating.DatabaseCreating();
+//        databaseCreatingTableMove.loadMovieTable();
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping

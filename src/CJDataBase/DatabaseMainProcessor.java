@@ -6,7 +6,7 @@ package CJDataBase;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn
  */
 public class DatabaseMainProcessor {
 

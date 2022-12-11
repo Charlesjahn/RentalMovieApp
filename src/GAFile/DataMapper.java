@@ -5,7 +5,6 @@
  */
 package GAFile;
 
-import GAFile.MovieRecords;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +14,12 @@ import java.util.List;
  */
 public class DataMapper {
     
-    ArrayList<Integer> movieID = new ArrayList<Integer>();
-    ArrayList<String> original_title = new ArrayList<String>();
-    ArrayList<String> release_date = new ArrayList<String>();
-    ArrayList<String> runtime = new ArrayList<String>();
-    ArrayList<String> title = new ArrayList<String>();
-    ArrayList<String> original_language = new ArrayList<String>();
+    ArrayList<Integer> movieID = new ArrayList<>();
+    ArrayList<String> original_title = new ArrayList<>();
+    ArrayList<String> release_date = new ArrayList<>();
+    ArrayList<String> runtime = new ArrayList<>();
+    ArrayList<String> title = new ArrayList<>();
+    ArrayList<String> original_language = new ArrayList<>();
     
     public MovieRecords map(List<String> lines){
     
