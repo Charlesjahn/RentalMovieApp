@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CJFileIO;
+package CJ_GA_FileIO;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,11 +13,15 @@ import java.util.List;
  */
 public class CSVProcessor {
 
-    public void processCSV() throws IOException {
+    public MovieRecords processCSV() throws IOException {
         System.out.println("LOADING...");
-        String inputFile = "movies_test.csv";
+        String inputFile = "movies-test2.csv";
         DataInput dataInput = new DataInput();
         List<String> lines = dataInput.InputData(inputFile);
-        System.out.println(lines.get(0));
+        
+        DataMapper map = new DataMapper();
+        MovieRecords records = map.map(lines);
+        
+        return records;
     }
 }
