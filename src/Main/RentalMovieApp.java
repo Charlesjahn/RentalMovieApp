@@ -2,9 +2,9 @@ package Main;
 
 import CJDataBase.DatabaseMainProcessor;
 import java.io.IOException;
-import java.util.Scanner;
 import CJFileIO.CSVProcessor;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
+import CJMenuLoginSign.UserNamePassword;
 import GAFile.SavingMovieTable;
 
 /**
@@ -23,7 +23,7 @@ public class RentalMovieApp {
 //     */
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        Scanner myKB = new Scanner(System.in);
+        UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
         int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
@@ -45,12 +45,9 @@ public class RentalMovieApp {
 
             switch (menuOption) {
                 case 1 -> {
-                    System.out.println("User name: ");
-                    String userName = myKB.nextLine();
-                    System.out.println("Password: ");
-                    String userPassword = myKB.nextLine();
+                    userInfoIniti.askInfo();
                     if (!userValidateLogin) {
-                        if (databaseCreating.searchInfo(userName, userPassword)) {
+                        if (databaseCreating.searchInfo(userInfoIniti.getUserName(), userInfoIniti.getUserPassword())) {
                             userValidateLogin = true;
                         } else {
                             menuOption = 0;
@@ -59,11 +56,8 @@ public class RentalMovieApp {
                     }
                 }
                 case 2 -> {
-                    System.out.println("User name: ");
-                    String userName = myKB.nextLine();
-                    System.out.println("Password: ");
-                    String userPassword = myKB.nextLine();
-                    databaseCreating.saveInfo(userName, userPassword);
+                    userInfoIniti.askInfo();
+                    databaseCreating.saveInfo(userInfoIniti.getUserName(), userInfoIniti.getUserPassword());
                     menuOption = 0;
                 }
                 case 3 -> {
