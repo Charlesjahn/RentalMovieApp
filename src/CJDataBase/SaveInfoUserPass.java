@@ -19,12 +19,19 @@ public class SaveInfoUserPass {
         try {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            stmt.execute(
-                    String.format("INSERT INTO %s (username, password) "
+            boolean testingUser = stmt.execute(
+                    String.format("INSERT IGNORE INTO %s (username, password) "
                             + "VALUES (\"%s\", \"%s\") ;",
                             tableName, userName, userPass)
             );
+            if (testingUser) {
+                System.out.println("Valid User!");
+            } else {
+                System.out.println("Invalid!!!\n Please try a different User Name:");
+            }
+
         } catch (SQLException e) {
+            System.out.println("invalid user");
             e.printStackTrace();
         }
     }
