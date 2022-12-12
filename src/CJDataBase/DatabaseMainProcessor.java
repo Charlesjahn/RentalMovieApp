@@ -25,7 +25,6 @@ public class DatabaseMainProcessor {
         } else if ("movies".equals(tableName)) {
             createTable.dataBaseConnMovie(dbName, USER, PASS, tableName);
         }
-
     }
 
     public boolean saveInfo(String userName, String userPass) {
@@ -34,8 +33,7 @@ public class DatabaseMainProcessor {
     }
 
     public boolean searchInfo(String userName, String userPass) {
-        dbInfo.DBInfoUserPass(userName, userPass, DB_URL, USER, PASS, tableName);
-        return true;
+        return dbInfo.DBInfoUserPass(userName, userPass, DB_URL, USER, PASS, tableName);
     }
 
     public void setTableName(String tableName) {
