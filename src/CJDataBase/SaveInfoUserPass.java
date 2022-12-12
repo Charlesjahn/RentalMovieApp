@@ -6,6 +6,7 @@ package CJDataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,19 +18,22 @@ public class SaveInfoUserPass {
 
     public void insertInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
+            boolean newUserName = true;
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            boolean testingUser = stmt.execute(
-                    String.format("INSERT IGNORE INTO %s (username, password) "
-                            + "VALUES (\"%s\", \"%s\") ;",
-                            tableName, userName, userPass)
-            );
-            if (testingUser) {
-                System.out.println("Valid User!");
-            } else {
-                System.out.println("Invalid!!!\nPlease try a different User Name:");
+            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "';");
+            while (rs.next()) {
+                System.out.println("User Name already exist!!");
+                newUserName = false;
+                break;
             }
-
+            if (newUserName) {
+                stmt.execute(
+                        String.format("INSERT IGNORE INTO %s (username, password) "
+                                + "VALUES (\"%s\", \"%s\") ;",
+                                tableName, userName, userPass)
+                );
+            }
         } catch (SQLException e) {
             System.out.println("invalid user");
         }
