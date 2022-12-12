@@ -29,7 +29,6 @@ public class RentalMovieApp {
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPasswor");
         databaseCreating.DatabaseCreating();
-//        databaseCreating.saveInfo("admin", "admin");
 
 //        SavingMovieTable databaseCreatingTableMove = new SavingMovieTable();
 //        databaseCreating.setTableName("movies");
@@ -60,7 +59,11 @@ public class RentalMovieApp {
                     }
                 }
                 case 2 -> {
-                    System.out.println("Under contrustion");
+                    System.out.println("User name: ");
+                    String userName = myKB.nextLine();
+                    System.out.println("Password: ");
+                    String userPassword = myKB.nextLine();
+                    databaseCreating.saveInfo(userName, userPassword);
                     menuOption = 0;
                 }
                 case 3 -> {
