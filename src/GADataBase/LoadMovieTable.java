@@ -32,8 +32,7 @@ public class LoadMovieTable {
             preparedStmt.setString (6, originalLanguage);
             preparedStmt.execute();
             conn.close();
-            
-            
+        
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println(e);
