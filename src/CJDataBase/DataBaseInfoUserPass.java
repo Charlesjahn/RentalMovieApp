@@ -28,7 +28,7 @@ public class DataBaseInfoUserPass {
                 System.out.println("Login Successful!!");
                 return true;
             }
-            System.out.println("User invalid!!");
+            System.out.println("User invalid!!\nCheck your username and password");
             return false;
         } catch (SQLException e) {
             return false;
