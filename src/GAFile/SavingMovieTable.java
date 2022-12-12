@@ -33,7 +33,7 @@ public class SavingMovieTable {
         ArrayList<String> original_language = records.getAllList().get(5);
 
         for (int i = 0; i < movieID.size(); i++) {
-            loader.load(movieID.get(i), original_title.get(i), release_date.get(i), runtime.get(i), title.get(i), original_language.get(i), DB_URL, USER, PASS, "movies");
+            loader.load(movieID.get(i), original_title.get(i), release_date.get(i), runtime.get(i), title.get(i), original_language.get(i), DB_URL, USER, PASS, tableName);
         }
     }
 }
