@@ -19,9 +19,9 @@ public class UserNamePassword {
 
     public void askInfo() {
         System.out.println("User name: ");
-        this.userName = myKB.nextLine();
+        this.userName = myKB.nextLine().trim();
         System.out.println("Password: ");
-        this.userPassword = myKB.nextLine();
+        this.userPassword = myKB.nextLine().trim();
     }
 
     public String getUserName() {
