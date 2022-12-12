@@ -24,17 +24,12 @@ public class LoadMovieTable {
         
         
         try {
-            
-            
-            
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM users_passwords.movies;");
             
             if(rs.next() == false){
-            
-            
                 String sql = "INSERT INTO movies (id, original_title, release_date, runtime, title, original_language) "
                                 + "VALUES (?,?,?,?,?,?);";
 
