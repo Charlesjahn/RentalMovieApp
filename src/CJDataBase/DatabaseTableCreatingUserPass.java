@@ -11,8 +11,9 @@ import java.sql.Statement;
 
 /**
  *
- * @author Charles Franklin Jahn
- * @Author Gabriel Antoniolli - Movie Database
+ * @author Charles Franklin Jahn dataBaseConnUser
+ * @Author Gabriel Antoniolli dataBaseConnMovie
+ * 
  */
 public class DatabaseTableCreatingUserPass {
 
@@ -30,7 +31,6 @@ public class DatabaseTableCreatingUserPass {
                     + "password TEXT(15) NOT NULL);"
             );
         } catch (SQLException e) {
-            e.printStackTrace();
         }
 
     }
@@ -52,7 +52,6 @@ public class DatabaseTableCreatingUserPass {
                     
             );
         } catch (SQLException e) {
-            e.printStackTrace();
         }
 
     }

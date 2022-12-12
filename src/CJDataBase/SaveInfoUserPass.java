@@ -27,12 +27,11 @@ public class SaveInfoUserPass {
             if (testingUser) {
                 System.out.println("Valid User!");
             } else {
-                System.out.println("Invalid!!!\n Please try a different User Name:");
+                System.out.println("Invalid!!!\nPlease try a different User Name:");
             }
 
         } catch (SQLException e) {
             System.out.println("invalid user");
-            e.printStackTrace();
         }
     }
 }
