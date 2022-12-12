@@ -20,7 +20,6 @@ public class DataInput {
         BufferedReader myReader = new BufferedReader(new FileReader(InputFile));
         List<String> lines = new ArrayList<>();
         String inputLine = myReader.readLine();
-        System.out.println(inputLine);
         while ((inputLine = myReader.readLine()) != null) {
             lines.add(inputLine);
         }     

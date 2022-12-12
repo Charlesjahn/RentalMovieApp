@@ -34,6 +34,8 @@ public class DatabaseTableCreatingUserPass {
         }
 
     }
+    
+    // CREIO Q PODEMOS APAAGAR ESSE
     public void dataBaseConnMovie(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
         try {

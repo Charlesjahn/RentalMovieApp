@@ -14,7 +14,7 @@ import java.sql.Statement;
  * @Author Gabriel Antoniolli - Movie Database
  */
 public class DatabaseTableCreatingMovies {
-    public void dataBaseConn(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void dataBaseConnMovies(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/", USER, PASS);

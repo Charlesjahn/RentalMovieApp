@@ -5,7 +5,11 @@ import java.io.IOException;
 import CJFileIO.CSVProcessor;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
 import CJMenuLoginSign.UserNamePassword;
+import GADataBase.DatabaseTableCreatingMovies;
+import GADataBase.MovieDisplay;
+import GADataBase.QueryMoviesDB;
 import GAFile.SavingMovieTable;
+import java.util.List;
 
 /**
  *
@@ -25,15 +29,11 @@ public class RentalMovieApp {
 
         UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
+        boolean moviesLoaded = false;
         int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPasswor");
         databaseCreating.DatabaseCreating();
-
-//        SavingMovieTable databaseCreatingTableMove = new SavingMovieTable();
-//        databaseCreating.setTableName("movies");
-//        databaseCreating.DatabaseCreating();
-//        databaseCreatingTableMove.loadMovieTable();
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping
@@ -68,9 +68,29 @@ public class RentalMovieApp {
         * If user is valid it here will be the menu for rent movies
          */
         if (userValidateLogin) {
-            CSVProcessor csvProcessor = new CSVProcessor();
-            csvProcessor.processCSV();
+            if(moviesLoaded == false){
+                // will create the movies table if it hasnt been created before
+                databaseCreating.setTableName("movies");
+                databaseCreating.DatabaseCreating();
+        
+                //Start filling the table with the data read from the .csv file
+                SavingMovieTable movieTable = new SavingMovieTable();
+        
+                // start retrieving the data from the db to a variable called movies
+                QueryMoviesDB movieQuery = movieTable.loadMovieTable();
+                movieQuery.GetAllMovies();
+        
+                // movies has the title, runtime, and original_language properties to each movie
+                List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
+        
+                // sets this variable to true so it wont reload the db if another user logs in
+                moviesLoaded = true;
+            }
+            
         }
+        
+        
+       
     }
 
 }
