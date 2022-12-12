@@ -1,5 +1,6 @@
 package CJDataBase;
 
+import CJMenuLoginSign.UserNamePassword;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,7 +12,7 @@ import java.sql.Statement;
  * @author Charles Franklin Jahn
  */
 public class DataBaseInfoUserPass {
-
+    private UserNamePassword info = new UserNamePassword();
     private String name;
     private int idUser;
     private String passwordUser;
