@@ -6,6 +6,7 @@ package GAFile;
 
 import CJFileIO.CSVProcessor;
 import GADataBase.LoadMovieTable;
+import GADataBase.QueryMoviesDB;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -17,11 +18,13 @@ public class SavingMovieTable {
 
     private final String dbName = "users_passwords";
     private final String DB_URL = "jdbc:mysql://localhost/" + dbName;
-    private final String USER = "CA1movieApp";
-    private final String PASS = "CA1movieApp";
+//    private final String USER = "CA1movieApp";
+//    private final String PASS = "CA1movieApp";
+    private final String USER = "test";
+    private final String PASS = "";
     private final String tableName = "movies";
 
-    public void loadMovieTable() throws IOException {
+    public QueryMoviesDB loadMovieTable() throws IOException {
         LoadMovieTable loader = new LoadMovieTable();
         CSVProcessor processor = new CSVProcessor();
         MovieRecords records = processor.processCSV();
@@ -35,5 +38,6 @@ public class SavingMovieTable {
         for (int i = 0; i < movieID.size(); i++) {
             loader.load(movieID.get(i), original_title.get(i), release_date.get(i), runtime.get(i), title.get(i), original_language.get(i), DB_URL, USER, PASS, tableName);
         }
+        return new QueryMoviesDB(USER,PASS,DB_URL);
     }
 }
