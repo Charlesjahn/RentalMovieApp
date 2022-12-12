@@ -51,7 +51,6 @@ public class RentalMovieApp {
                             userValidateLogin = true;
                         } else {
                             menuOption = 0;
-                            System.out.println(menuOption);
                         }
                     }
                 }
