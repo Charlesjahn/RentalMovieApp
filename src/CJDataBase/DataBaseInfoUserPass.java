@@ -20,17 +20,17 @@ public class DataBaseInfoUserPass {
         try {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            System.out.println(userName +"+++++"+ userPass);
             ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "' AND password = '" + userPass + "';");
             while (rs.next()) {
                 this.name = rs.getString("userName");
                 this.idUser = rs.getInt("idUser");
                 this.passwordUser = rs.getString("password");
+                System.out.println("Login Successful!!");
+                return true;
             }
-            return true;
+            System.out.println("User invalid!!");
+            return false;
         } catch (SQLException e) {
-            System.out.println("User invalid");
-            e.printStackTrace();
             return false;
         }
     }
