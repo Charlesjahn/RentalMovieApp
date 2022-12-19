@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class DatabaseTableCreatingUserPass {
 
     public void dataBaseConnUser(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+        Class.forName("com.mysql.cj.jdbc.Driver");
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/", USER, PASS);
             Statement stmt = conn.createStatement();
@@ -28,7 +28,8 @@ public class DatabaseTableCreatingUserPass {
                     "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                     + "idUser INT NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,"
                     + "userName VARCHAR(30) NOT NULL UNIQUE,"
-                    + "password TEXT(15) NOT NULL);"
+                    + "password TEXT(15) NOT NULL),"
+                            + "movieRented JSON;"
             );
         } catch (SQLException e) {
         }

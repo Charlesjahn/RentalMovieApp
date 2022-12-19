@@ -9,12 +9,16 @@ import GADataBase.DatabaseTableCreatingMovies;
 import GADataBase.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GAFile.SavingMovieTable;
+import LAuserMenu.LAuserMenu;
 import java.util.List;
+import java.util.Scanner;
+import java.util.*;
 
 /**
  *
  * @author Charles Franklin Jahn 2020315
  * @Author Gabriel Antoniolli - Movie Database
+ * @author Luiza Cavalcanti 2020309 - User Menu
  */
 public class RentalMovieApp {
 
@@ -30,6 +34,7 @@ public class RentalMovieApp {
         UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
         boolean moviesLoaded = false;
+//         int menuOption = 2;
         int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPasswor");
@@ -67,29 +72,54 @@ public class RentalMovieApp {
         * If user is valid it here will be the menu for rent movies
          */
         if (userValidateLogin) {
-            if(moviesLoaded == false){
-                // will create the movies table if it hasnt been created before
-                databaseCreating.setTableName("movies");
-                databaseCreating.DatabaseCreating();
-        
-                //Start filling the table with the data read from the .csv file
-                SavingMovieTable movieTable = new SavingMovieTable();
-        
-                // start retrieving the data from the db to a variable called movies
-                QueryMoviesDB movieQuery = movieTable.loadMovieTable();
-                movieQuery.GetAllMovies();
-        
-                // movies has the title, runtime, and original_language properties to each movie
-                List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
-        
-                // sets this variable to true so it wont reload the db if another user logs in
-                moviesLoaded = true;
-            }
-            
-        }
-        
-        
-       
-    }
 
+            LAuserMenu option = new LAuserMenu();
+            int choice = option.userMenu();
+
+            //Logic
+            switch (choice) {
+
+                case 1:
+                    System.out.println("working on 1");  
+//                userChoice = "Rent a movie";
+                    break;
+                case 2:
+                    System.out.println("Rented movies");   
+                    
+//                userChoice = "See rented movies";
+                    break;
+                case 3:
+                     System.out.println("working on 3");  
+//                userChoice = "Change Password";
+                    break;
+                case 4:
+                     System.out.println("working on 4");  
+//                userChoice = "Exit user menu";
+                    break;
+//                default:
+//                userChoice = "Option not valid, Please choose one of the above";
+            }
+
+            //Output 
+//        System.out.println("You choose" + userChoice);
+        }
+    }
+//            if(moviesLoaded == false){
+//                // will create the movies table if it hasnt been created before
+//                databaseCreating.setTableName("movies");
+//                databaseCreating.DatabaseCreating();
+//        
+//                //Start filling the table with the data read from the .csv file
+//                SavingMovieTable movieTable = new SavingMovieTable();
+//        
+//                // start retrieving the data from the db to a variable called movies
+//                QueryMoviesDB movieQuery = movieTable.loadMovieTable();
+//                movieQuery.GetAllMovies();
+//        
+//                // movies has the title, runtime, and original_language properties to each movie
+//                List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
+//        
+//                // sets this variable to true so it wont reload the db if another user logs in
+//                moviesLoaded = true;
+//            }
 }
