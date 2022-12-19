@@ -13,7 +13,7 @@ import java.sql.Statement;
  *
  * @author Charles Franklin Jahn dataBaseConnUser
  * @Author Gabriel Antoniolli dataBaseConnMovie
- * 
+ *
  */
 public class DatabaseTableCreatingUserPass {
 
@@ -28,14 +28,14 @@ public class DatabaseTableCreatingUserPass {
                     "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                     + "idUser INT NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,"
                     + "userName VARCHAR(30) NOT NULL UNIQUE,"
-                    + "password TEXT(15) NOT NULL),"
-                            + "movieRented JSON;"
+                    + "password TEXT(15) NOT NULL);"
+//                    + "movieRented JSON;"
             );
         } catch (SQLException e) {
+            System.out.println("Database not Connected 3");
         }
-
     }
-    
+
     // CREIO Q PODEMOS APAAGAR ESSE
     public void dataBaseConnMovie(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -52,9 +52,9 @@ public class DatabaseTableCreatingUserPass {
                     + "runtime VARCHAR(30) NOT NULL,"
                     + "title VARCHAR(45) NOT NULL,"
                     + "original_language VARCHAR(5) NOT NULL);"
-                    
             );
         } catch (SQLException e) {
+
         }
 
     }

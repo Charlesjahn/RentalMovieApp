@@ -37,7 +37,7 @@ public class RentalMovieApp {
 //         int menuOption = 2;
         int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
-        databaseCreating.setTableName("UserPasswor");
+        databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
         /*
         * Here will Show the menu to login, Sign or Exir

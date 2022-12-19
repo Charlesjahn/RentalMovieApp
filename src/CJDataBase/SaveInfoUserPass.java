@@ -35,7 +35,7 @@ public class SaveInfoUserPass {
                 );
             }
         } catch (SQLException e) {
-            System.out.println("invalid user");
+            System.out.println("Database not Connected 4");
         }
     }
 }

@@ -17,7 +17,6 @@ public class DataBaseInfoUserPass {
     private String name;
     private int idUser;
     private String passwordUser;
-//AND password = '" + userPass + "'
 
     public boolean DBInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
@@ -40,9 +39,10 @@ public class DataBaseInfoUserPass {
                 }
             }
         } catch (SQLException e) {
+                        System.out.println("Database not Connected 2");
+
             return false;
         }
-        System.out.println("User invalid");
         return false;
     }
 

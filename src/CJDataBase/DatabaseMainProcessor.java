@@ -20,7 +20,7 @@ public class DatabaseMainProcessor {
     private String tableName;
 
     public void DatabaseCreating() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        if ("UserPasswor".equals(tableName)) {
+        if ("UserPassword".equals(tableName)) {
             createTable.dataBaseConnUser(dbName, USER, PASS, tableName);
         } else if ("movies".equals(tableName)) {
             createTable.dataBaseConnMovie(dbName, USER, PASS, tableName);
