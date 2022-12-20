@@ -44,7 +44,7 @@ public class RentalMovieApp {
         * While not insert valid input it will keep looping
         * This while will loop until be break with one of the option
          */
-        while (menuOption == 0) {
+       /* while (menuOption == 0) {
             LoopingMenuLoginSignValidation loopMenuLoginSignVariable = new LoopingMenuLoginSignValidation();
             menuOption = loopMenuLoginSignVariable.loopMenuLoginSignValidation(menuOption);
 
@@ -67,11 +67,11 @@ public class RentalMovieApp {
                 case 3 -> {
                 }
             }
-        }
+        }*/
         /*
         * If user is valid it here will be the menu for rent movies
          */
-        if (userValidateLogin) {
+       /* if (userValidateLogin) {
 
             LAuserMenu option = new LAuserMenu();
             int choice = option.userMenu();
@@ -103,23 +103,29 @@ public class RentalMovieApp {
             //Output 
 //        System.out.println("You choose" + userChoice);
         }
-    }
-//            if(moviesLoaded == false){
-//                // will create the movies table if it hasnt been created before
-//                databaseCreating.setTableName("movies");
-//                databaseCreating.DatabaseCreating();
-//        
-//                //Start filling the table with the data read from the .csv file
-//                SavingMovieTable movieTable = new SavingMovieTable();
-//        
-//                // start retrieving the data from the db to a variable called movies
-//                QueryMoviesDB movieQuery = movieTable.loadMovieTable();
-//                movieQuery.GetAllMovies();
-//        
-//                // movies has the title, runtime, and original_language properties to each movie
-//                List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
-//        
-//                // sets this variable to true so it wont reload the db if another user logs in
-//                moviesLoaded = true;
-//            }
+    }*/
+            if(moviesLoaded == false){
+                // will create the movies table if it hasnt been created before
+                databaseCreating.setTableName("movies");
+                databaseCreating.DatabaseCreating();
+        
+                //Start filling the table with the data read from the .csv file
+                SavingMovieTable movieTable = new SavingMovieTable();
+        
+                // start retrieving the data from the db to a variable called movies
+                QueryMoviesDB movieQuery = movieTable.loadMovieTable();
+                movieQuery.GetAllMovies();
+        
+                // movies has the title, runtime, and original_language properties to each movie
+                List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
+        
+                // sets this variable to true so it wont reload the db if another user logs in
+                moviesLoaded = true;
+                
+                for(MovieDisplay md : movies){
+                
+                    System.out.println(md.getTitle());
+                }
+            }
+}
 }
