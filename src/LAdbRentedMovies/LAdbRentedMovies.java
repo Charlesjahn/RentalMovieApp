@@ -26,7 +26,7 @@ public class LAdbRentedMovies {
         try {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "' ;");
+//            stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "' ;");
 
         } catch (SQLException e) {
         }

@@ -9,10 +9,12 @@ import GADataBase.DatabaseTableCreatingMovies;
 import GADataBase.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GAFile.SavingMovieTable;
+import LAuserMenu.LAReadDBMovies;
 import LAuserMenu.LAuserMenu;
 import java.util.List;
 import java.util.Scanner;
 import java.util.*;
+
 
 /**
  *
@@ -34,8 +36,8 @@ public class RentalMovieApp {
         UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
         boolean moviesLoaded = false;
-//         int menuOption = 2;
-        int menuOption = 0;
+         int menuOption = 2;
+//        int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
@@ -71,16 +73,21 @@ public class RentalMovieApp {
         /*
         * If user is valid it here will be the menu for rent movies
          */
-        if (userValidateLogin) {
+        if (!userValidateLogin) {
 
             LAuserMenu option = new LAuserMenu();
             int choice = option.userMenu();
 
+            
             //Logic
             switch (choice) {
 
                 case 1:
                     System.out.println("working on 1");  
+                    
+                    
+     LAReadDBMovies readMovie = new LAReadDBMovies();
+     readMovie.load(l);
 //                userChoice = "Rent a movie";
                     break;
                 case 2:
