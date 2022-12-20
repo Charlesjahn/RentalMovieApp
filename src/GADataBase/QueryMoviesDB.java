@@ -29,6 +29,7 @@ public class QueryMoviesDB {
         this.USER = USER;
         this.PASS = PASS;
         this.DB_URL = DB_URL;
+        
     }
     
      public void GetAllMovies() {
