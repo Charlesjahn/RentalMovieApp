@@ -14,21 +14,21 @@ import java.sql.Statement;
 public class DataBaseInfoUserPass {
 
     private final UserPasswordValidation check = new UserPasswordValidation();
-    private String name;
+    private String email;
     private int idUser;
     private String passwordUser;
 
-    public boolean DBInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
+    public boolean DBInfoUserPass(String userEmail, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "' ;");
+            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userEmail = '" + userEmail + "' ;");
             while (rs.next()) {
-                this.name = rs.getString("userName");
+                this.email = rs.getString("userEmail");
                 this.idUser = rs.getInt("idUser");
                 this.passwordUser = rs.getString("password");
-                if (!check.validstionInfoDB(userName, this.name)) {
-                    System.out.println("User invalid");
+                if (!check.validstionInfoDB(userEmail, this.email)) {
+                    System.out.println("User Email invalid");
                     break;
                 }
                 if (!check.validstionInfoDB(userPass, this.passwordUser)) {

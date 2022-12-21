@@ -30,13 +30,13 @@ public class DatabaseMainProcessor {
         }
     }
 
-    public boolean saveInfo(String userName, String userPass) {
-        saveInfo.insertInfoUserPass(userName, userPass, DB_URL, USER, PASS, tableName);
+    public boolean saveInfo(String userEmail, String userPass) {
+        saveInfo.insertInfoUserPass(userEmail, userPass, DB_URL, USER, PASS, tableName);
         return true;
     }
 
-    public boolean searchInfo(String userName, String userPass) {
-        return dbInfo.DBInfoUserPass(userName, userPass, DB_URL, USER, PASS, tableName);
+    public boolean searchInfo(String userEmail, String userPass) {
+        return dbInfo.DBInfoUserPass(userEmail, userPass, DB_URL, USER, PASS, tableName);
     }
 
     public void setTableName(String tableName) {

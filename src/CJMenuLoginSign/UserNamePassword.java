@@ -14,18 +14,18 @@ public class UserNamePassword {
 
     private final Scanner myKB = new Scanner(System.in);
 
-    private String userName;
+    private String userEmail;
     private String userPassword;
 
     public void askInfo() {
-        System.out.println("User name: ");
-        this.userName = myKB.nextLine().trim();
+        System.out.println("Email: ");
+        this.userEmail = myKB.nextLine().trim();
         System.out.println("Password: ");
         this.userPassword = myKB.nextLine().trim();
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserEmail() {
+        return userEmail;
     }
 
     public String getUserPassword() {
