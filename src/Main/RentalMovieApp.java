@@ -112,6 +112,7 @@ public class RentalMovieApp {
 
 //                userChoice = "See rented movies";
                     break;
+               
                 case 3:
                     System.out.println("You exit, now you are back to main menu:");
                       MenuLoginSing back = new MenuLoginSing();
