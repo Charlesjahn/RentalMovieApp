@@ -3,13 +3,11 @@ package Main;
 import CJDataBase.DatabaseMainProcessor;
 import java.io.IOException;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
-import CJMenuLoginSign.MenuLoginSing;
 import CJMenuLoginSign.UserNamePassword;
 import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GADataBase.SavingMovieTable;
 import GAFile.FindMovie;
-import GAFile.UserMovieOptionsOrganizer;
 import LAdbRentedMovies.DBRentedMovies;
 import LAuserMenu.UserMenu;
 import java.util.ArrayList;
@@ -39,7 +37,7 @@ public class RentalMovieApp {
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
-
+        String user = null;
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping
@@ -55,6 +53,7 @@ public class RentalMovieApp {
                     userInfoIniti.askInfo();
                     if (!userValidateLogin) {
                         if (databaseCreating.searchInfo(userInfoIniti.getUserEmail(), userInfoIniti.getUserPassword())) {
+                            user = userInfoIniti.getUserEmail();
                             userValidateLogin = true;
                         } else {
                             menuOption = 0;
@@ -65,6 +64,7 @@ public class RentalMovieApp {
                     UserNamePassword userInfoIniti = new UserNamePassword();
                     userInfoIniti.askInfo();
                     databaseCreating.saveInfo(userInfoIniti.getUserEmail(), userInfoIniti.getUserPassword());
+
                     menuOption = 0;
                 }
                 case 3 -> {
@@ -77,7 +77,7 @@ public class RentalMovieApp {
 
         if (userValidateLogin) {
 //            List to store rented Movies
-            List<MovieDisplay> movies = new ArrayList<MovieDisplay>();
+            List<MovieDisplay> movies = new ArrayList<>();
             int temp = 0;
             DBRentedMovies rented = new DBRentedMovies(movies);
 //            loop to keep displaying menu 
@@ -110,11 +110,10 @@ public class RentalMovieApp {
                             moviesLoaded = true;
 
 //                            loop to choose movie 
+                            System.out.println("Choose a Movie id:");
                             for (MovieDisplay md : movies) {
 
                                 System.out.println(md);
-                                System.out.println("Choose a Movie id:");
-
                             }
 //                          scanner to get user input
                             Scanner userInput = new Scanner(System.in);
@@ -123,16 +122,13 @@ public class RentalMovieApp {
                             MovieDisplay selectedMovie = findMovieId.getMovieForRent();
                             rented.addMovie(selectedMovie);
 //                            output user input for test purpose 
-                            System.out.println("The movie: " + selectedMovie.getTitle() + " was rented by: " + userInfoIniti.getUserName() + " Costing 5 euros");
+                            System.out.println("The movie: " + selectedMovie.getTitle() + " was rented by: " + user + " Costing 5 euros");
 //                            comeback to choice
                             option.userMenuDecoretor();
                         }
-
-//          break;
                     }
 //                    second case, to see rented movies
                     case 2 -> {
-
                         rented.showMoviesRented();
                         break;
                     }
