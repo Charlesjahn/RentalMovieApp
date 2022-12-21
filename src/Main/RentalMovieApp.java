@@ -37,7 +37,6 @@ public class RentalMovieApp {
         databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
         
-        
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping
@@ -71,7 +70,6 @@ public class RentalMovieApp {
         * If user is valid it here will be the menu for rent movies
          */
         if (userValidateLogin) {
-
             LAuserMenu option = new LAuserMenu();
             int choice = option.userMenu();
 
