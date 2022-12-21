@@ -9,7 +9,6 @@ import java.util.Scanner;
 /**
  *
  * @author Charles Franklin Jahn 2020315
- * @author Luiza Albuquerque 2020309
  */
 public class MenuLoginSing {
 
