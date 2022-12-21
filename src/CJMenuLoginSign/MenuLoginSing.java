@@ -16,7 +16,6 @@ public class MenuLoginSing {
     private final Scanner myKB = new Scanner(System.in);
 
     public boolean MenuLoginSing() {
-        System.out.println("Menu Login/Sign");
         System.out.println("1: Login");
         System.out.println("2: Sign");
         System.out.println("3: Exit");
