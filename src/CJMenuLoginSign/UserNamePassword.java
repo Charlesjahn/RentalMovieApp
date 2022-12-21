@@ -21,9 +21,11 @@ public class UserNamePassword {
     public void askInfo() {
         while (!this.emailIsfine) {
             System.out.println("User Email: ");
-            if (emailFormart.emailFormatcheck(myKB.nextLine().trim())) {
-                this.userEmail = myKB.nextLine().trim();
-                emailIsfine = true;
+            this.userEmail = myKB.nextLine().trim();
+            if (emailFormart.emailFormatcheck(this.userEmail)) {
+                this.emailIsfine = true;
+            } else {
+                myKB.next();
             }
         }
         System.out.println("Password: ");
