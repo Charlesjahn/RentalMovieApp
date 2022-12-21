@@ -2,18 +2,14 @@ package Main;
 
 import CJDataBase.DatabaseMainProcessor;
 import java.io.IOException;
-import CJFileIO.CSVProcessor;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
 import CJMenuLoginSign.MenuLoginSing;
 import CJMenuLoginSign.UserNamePassword;
-import GADataBase.DatabaseTableCreatingMovies;
 import GADataBase.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GAFile.SavingMovieTable;
 import LAuserMenu.LAuserMenu;
 import java.util.List;
-import java.util.Scanner;
-import java.util.*;
 
 /**
  *
