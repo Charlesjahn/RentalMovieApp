@@ -32,7 +32,7 @@ public class DatabaseTableCreatingMovies {
                     
             );
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error of creating the table!");
         }
 
     }
