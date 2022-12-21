@@ -3,7 +3,6 @@ package Main;
 import CJDataBase.DatabaseMainProcessor;
 import java.io.IOException;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
-import CJMenuLoginSign.MenuLoginSing;
 import CJMenuLoginSign.UserNamePassword;
 import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;

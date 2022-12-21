@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author luizaalbuquerque
+ * @author Luiza Albuquerque
  */
 public class UserMenu {
 
