@@ -16,7 +16,7 @@ import java.sql.Statement;
  *
  * @Author Gabriel Antoniolli - Movie Database
  */
-public class LoadMovieTable {
+public class FillingMovieTable {
     
     
     public void load(int id, String originalTitle, String releaseDate, String runtime, String title, String originalLanguage,String DB_URL, String USER, String PASS, String tableName) {
