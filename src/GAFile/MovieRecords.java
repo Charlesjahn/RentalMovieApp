@@ -29,11 +29,9 @@ public class MovieRecords {
         this.title = title;
         this.original_language = original_language;
     }
-    
-    
     public HashMap<Integer,ArrayList> getAllList(){
     
-        HashMap<Integer,ArrayList> map = new HashMap<Integer,ArrayList>();
+        HashMap<Integer,ArrayList> map = new HashMap<>();
         map.put(0, id);
         map.put(1, original_title);
         map.put(2, release_date);
@@ -43,7 +41,4 @@ public class MovieRecords {
         
         return map;
     }
-    
-    
-    
 }

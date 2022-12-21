@@ -33,7 +33,6 @@ public class RentalMovieApp {
 //     */
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
         boolean moviesLoaded = false;
         int menuOption = 0;
@@ -52,9 +51,10 @@ public class RentalMovieApp {
 
             switch (menuOption) {
                 case 1 -> {
+                    UserNamePassword userInfoIniti = new UserNamePassword();
                     userInfoIniti.askInfo();
                     if (!userValidateLogin) {
-                        if (databaseCreating.searchInfo(userInfoIniti.getUserName(), userInfoIniti.getUserPassword())) {
+                        if (databaseCreating.searchInfo(userInfoIniti.getUserEmail(), userInfoIniti.getUserPassword())) {
                             userValidateLogin = true;
                         } else {
                             menuOption = 0;
@@ -62,8 +62,9 @@ public class RentalMovieApp {
                     }
                 }
                 case 2 -> {
+                    UserNamePassword userInfoIniti = new UserNamePassword();
                     userInfoIniti.askInfo();
-                    databaseCreating.saveInfo(userInfoIniti.getUserName(), userInfoIniti.getUserPassword());
+                    databaseCreating.saveInfo(userInfoIniti.getUserEmail(), userInfoIniti.getUserPassword());
                     menuOption = 0;
                 }
                 case 3 -> {

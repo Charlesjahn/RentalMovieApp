@@ -21,29 +21,29 @@ public class SaveInfoUserPass {
     /**
      * This method will save the user name and password on database
      *
-     * @param userName
+     * @param userEmail
      * @param userPass
      * @param DB_URL
      * @param USER
      * @param PASS
      * @param tableName
      */
-    public void insertInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
+    public void insertInfoUserPass(String userEmail, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
 
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "';");
+            ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userEmail = '" + userEmail + "';");
             while (rs.next()) {
-                System.out.println("User Name already exist!!");
+                System.out.println("User Email already exist!!");
                 this.newUserName = false;
                 break;
             }
             if (this.newUserName) {
                 stmt.execute(
-                        String.format("INSERT IGNORE INTO %s (username, password) "
+                        String.format("INSERT IGNORE INTO %s (userEmail, password) "
                                 + "VALUES (\"%s\", \"%s\") ;",
-                                tableName, userName, userPass)
+                                tableName, userEmail, userPass)
                 );
             }
         } catch (SQLException e) {
