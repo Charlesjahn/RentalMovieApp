@@ -121,6 +121,8 @@ public class RentalMovieApp {
                             FindMovie findMovieId = new FindMovie(rentMovie, movies);
                             MovieDisplay selectedMovie = findMovieId.getMovieForRent();
                             rented.addMovie(selectedMovie);
+                            UserNamePassword userInfoIniti = new UserNamePassword();
+                            userInfoIniti.askInfo();
 //                            output user input for test purpose 
                             System.out.println("The movie: " + selectedMovie.getTitle() + " was rented by: " + user + " Costing 5 euros");
 //                            comeback to choice
