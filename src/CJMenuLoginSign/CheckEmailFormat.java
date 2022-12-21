@@ -12,10 +12,12 @@ public class CheckEmailFormat {
 
     public boolean emailFormatcheck(String email) {
         if (email.contains("@cct.ie")) {
+            System.out.println(email);
             return true;
 
         } else {
-            System.out.println("Your email must be _______@cct.ie");
+            System.out.println("Your email must be 'exemple'@cct.ie");
+            System.out.println(email);
             return false;
         }
 
