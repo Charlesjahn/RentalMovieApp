@@ -39,7 +39,7 @@ public class DatabaseTableCreatingUserPass {
             stmt.execute(
                     "CREATE TABLE IF NOT EXISTS " + tableName + " ("
                     + "idUser INT NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,"
-                    + "userName VARCHAR(30) NOT NULL UNIQUE,"
+                    + "userEmail VARCHAR(30) NOT NULL UNIQUE,"
                     + "password TEXT(15) NOT NULL);"
             );
         } catch (SQLException e) {

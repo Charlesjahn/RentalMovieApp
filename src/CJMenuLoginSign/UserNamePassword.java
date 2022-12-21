@@ -14,7 +14,7 @@ public class UserNamePassword {
 
     private final Scanner myKB = new Scanner(System.in);
     private final CheckEmailFormat emailFormart = new CheckEmailFormat();
-    private String userName;
+    private String userEmail;
     private String userPassword;
     private boolean emailIsfine = false;
 
@@ -22,16 +22,16 @@ public class UserNamePassword {
         while (!this.emailIsfine) {
             System.out.println("User Email: ");
             if (emailFormart.emailFormatcheck(myKB.nextLine().trim())) {
+                this.userEmail = myKB.nextLine().trim();
                 emailIsfine = true;
             }
         }
-
         System.out.println("Password: ");
         this.userPassword = myKB.nextLine().trim();
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserEmail() {
+        return userEmail;
     }
 
     public String getUserPassword() {

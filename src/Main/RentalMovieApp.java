@@ -50,7 +50,7 @@ public class RentalMovieApp {
                 case 1 -> {
                     userInfoIniti.askInfo();
                     if (!userValidateLogin) {
-                        if (databaseCreating.searchInfo(userInfoIniti.getUserName(), userInfoIniti.getUserPassword())) {
+                        if (databaseCreating.searchInfo(userInfoIniti.getUserEmail(), userInfoIniti.getUserPassword())) {
                             userValidateLogin = true;
                         } else {
                             menuOption = 0;
@@ -59,7 +59,7 @@ public class RentalMovieApp {
                 }
                 case 2 -> {
                     userInfoIniti.askInfo();
-                    databaseCreating.saveInfo(userInfoIniti.getUserName(), userInfoIniti.getUserPassword());
+                    databaseCreating.saveInfo(userInfoIniti.getUserEmail(), userInfoIniti.getUserPassword());
                     menuOption = 0;
                 }
                 case 3 -> {
