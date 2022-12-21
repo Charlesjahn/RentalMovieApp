@@ -3,6 +3,7 @@ package Main;
 import CJDataBase.DatabaseMainProcessor;
 import java.io.IOException;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
+import CJMenuLoginSign.MenuLoginSing;
 import CJMenuLoginSign.UserNamePassword;
 import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;
@@ -107,7 +108,10 @@ public class RentalMovieApp {
                 case 3 ->
                     System.out.println("working on 3");
                 case 4 -> {
-                    System.out.println("Thank you for using our App!!!\n:D");
+                    System.out.println("Back to main menu!");
+                    MenuLoginSing back = new MenuLoginSing();
+                    back.MenuLoginSing();
+                    break;
                 }
 //                default:
 //                userChoice = "Option not valid, Please choose one of the above";

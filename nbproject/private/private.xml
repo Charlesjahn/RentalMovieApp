@@ -4,8 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GAFile/UserMovieOptionsOrganizer.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/CJDataBase/DatabaseTableCreatingUserPass.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GAFile/MovieRecords.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GAFile/FindMovie.java</file>
             <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/Main/RentalMovieApp.java</file>
-            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GADataBase/MovieDisplay.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GAFile/MovieDisplay.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/CJDataBase/DatabaseMainProcessor.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GADataBase/QueryMoviesDB.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GADataBase/SavingMovieTable.java</file>
+            <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/RentalMovieApp/src/GADataBase/DatabaseTableCreatingMovies.java</file>
         </group>
     </open-files>
 </project-private>
