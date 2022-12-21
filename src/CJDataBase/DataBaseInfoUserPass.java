@@ -46,8 +46,8 @@ public class DataBaseInfoUserPass {
         return false;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
     public int getIdUser() {
