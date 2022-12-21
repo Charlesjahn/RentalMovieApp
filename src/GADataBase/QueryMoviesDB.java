@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class QueryMoviesDB {
     
-    ArrayList<MovieDisplay> movies = new ArrayList<MovieDisplay>();
+    ArrayList<MovieDisplay> movies = new ArrayList<>();
     
     private final String USER;
     private final String PASS;
