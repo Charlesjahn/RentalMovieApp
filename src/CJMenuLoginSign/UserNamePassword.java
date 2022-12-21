@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn 2020315
  */
 public class UserNamePassword {
 
@@ -20,12 +20,14 @@ public class UserNamePassword {
 
     public void askInfo() {
         while (!this.emailIsfine) {
-            System.out.println("User Email: ");
-            this.userEmail = myKB.nextLine().trim();
-            if (emailFormart.emailFormatcheck(this.userEmail)) {
+            System.out.println("User Email: 'exemple'@cct.ie");
+            String userEmailTest = myKB.nextLine().trim();
+            if (emailFormart.emailFormatcheck(userEmailTest)) {
+                this.userEmail = userEmailTest;
                 this.emailIsfine = true;
+
             } else {
-                myKB.next();
+                this.userEmail = "";
             }
         }
         System.out.println("Password: ");
