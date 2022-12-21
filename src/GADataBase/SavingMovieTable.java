@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @Author Gabriel Antoniolli - Movie Database
+ * @author Gabriel Antoniolli - Movie Database
  * @author Luiza Albuquerque 2020309
  */
 public class SavingMovieTable {
@@ -34,7 +34,6 @@ public class SavingMovieTable {
         ArrayList<String> original_language = records.getAllList().get(5);
 
         for (int i = 0; i < movieID.size(); i++) {
-//            System.out.println(movieID.get(i) + original_title.get(i) + release_date.get(i) + runtime.get(i) + title.get(i) + original_language.get(i));
             loader.load(movieID.get(i), original_title.get(i), release_date.get(i), runtime.get(i), title.get(i), original_language.get(i), DB_URL, USER, PASS, tableName);
         }
         return new QueryMoviesDB(USER, PASS, DB_URL);
