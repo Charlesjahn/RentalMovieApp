@@ -14,7 +14,7 @@ import java.sql.Statement;
  *
  * @author luizaalbuquerque
  */
-public class LAdbRentedMovies {
+public class DBRentedMovies {
 
     private final String dbName = "users_passwords";
     private final String DB_URL = "jdbc:mysql://localhost/" + dbName;
