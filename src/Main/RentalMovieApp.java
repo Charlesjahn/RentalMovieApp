@@ -14,7 +14,7 @@ import java.util.List;
 /**
  *
  * @author Charles Franklin Jahn 2020315
- * @Author Gabriel Antoniolli - Movie Database
+ * @author Gabriel Antoniolli - Movie Database
  * @author Luiza Cavalcanti 2020309 - User Menu
  */
 public class RentalMovieApp {
@@ -31,7 +31,6 @@ public class RentalMovieApp {
         UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
         boolean moviesLoaded = false;
-//        int menuOption = 2;
         int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPassword");
