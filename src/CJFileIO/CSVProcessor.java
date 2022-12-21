@@ -14,7 +14,12 @@ import java.util.List;
  * @author Charles Franklin Jahn 2020315
  */
 public class CSVProcessor {
-
+    /**
+     * Parse the CSV
+     * 
+     * @return
+     * @throws IOException 
+     */
     public MovieRecords processCSV() throws IOException {
         System.out.println("LOADING...");
         String inputFile = "movies-test2.csv";
