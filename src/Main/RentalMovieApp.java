@@ -8,6 +8,7 @@ import CJMenuLoginSign.UserNamePassword;
 import GADataBase.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GAFile.SavingMovieTable;
+import GAFile.UserMovieOptionsOrganizer;
 import LAuserMenu.LAuserMenu;
 import java.util.List;
 
@@ -94,6 +95,9 @@ public class RentalMovieApp {
 
                         // sets this variable to true so it wont reload the db if another user logs in
                         moviesLoaded = true;
+                        
+                        UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
+                        movieOrganizer.displayMovies();
                         System.out.println("Rent a movie, by choosing it's number");
                         System.out.println(movies);
                     }
