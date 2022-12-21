@@ -7,7 +7,7 @@ package GAFile;
 
 /**
  *
- * @Author Gabriel Antoniolli - Movie Database
+ * @author Gabriel Antoniolli - Movie Database
  */
 public class DataSplitter {
     
