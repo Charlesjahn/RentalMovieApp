@@ -13,13 +13,19 @@ import java.util.Scanner;
 public class UserNamePassword {
 
     private final Scanner myKB = new Scanner(System.in);
-
+    private final CheckEmailFormat emailFormart = new CheckEmailFormat();
     private String userName;
     private String userPassword;
+    private boolean emailIsfine = false;
 
     public void askInfo() {
-        System.out.println("User name: ");
-        this.userName = myKB.nextLine().trim();
+        while (!this.emailIsfine) {
+            System.out.println("User Email: ");
+            if (emailFormart.emailFormatcheck(myKB.nextLine().trim())) {
+                emailIsfine = true;
+            }
+        }
+
         System.out.println("Password: ");
         this.userPassword = myKB.nextLine().trim();
     }
