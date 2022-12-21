@@ -21,9 +21,9 @@ public class UserMovieOptionsOrganizer {
     }
     public void displayMovies(){
         
-        List<MovieDisplay> temp = new ArrayList<MovieDisplay>();
+        List<MovieDisplay> temp = new ArrayList<>();
     
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 5; i++){
         
             System.out.println(movies.get(i));
             temp.add(movies.get(i));
