@@ -99,7 +99,6 @@ public class RentalMovieApp {
                         UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
                         movieOrganizer.displayMovies();
                         System.out.println("Rent a movie, by choosing it's number");
-                        System.out.println(movies);
                     }
 //                  LAReadDBMovies readMovie = new LAReadDBMovies();
 //                  readMovie.load();
