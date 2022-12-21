@@ -35,8 +35,8 @@ public class RentalMovieApp {
         UserNamePassword userInfoIniti = new UserNamePassword();
         boolean userValidateLogin = false;
         boolean moviesLoaded = false;
-        int menuOption = 2;
-//        int menuOption = 0;
+//        int menuOption = 2;
+        int menuOption = 0;
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
@@ -45,7 +45,7 @@ public class RentalMovieApp {
         * While not insert valid input it will keep looping
         * This while will loop until be break with one of the option
          */
-       /* while (menuOption == 0) {
+        while (menuOption == 0) {
             LoopingMenuLoginSignValidation loopMenuLoginSignVariable = new LoopingMenuLoginSignValidation();
             menuOption = loopMenuLoginSignVariable.loopMenuLoginSignValidation(menuOption);
 
@@ -68,11 +68,11 @@ public class RentalMovieApp {
                 case 3 -> {
                 }
             }
-        }*/
-        /*
+        }
+        /**
         * If user is valid it here will be the menu for rent movies
          */
-        if (!userValidateLogin) {
+        if (userValidateLogin) {
 
             LAuserMenu option = new LAuserMenu();
             int choice = option.userMenu();
@@ -80,10 +80,8 @@ public class RentalMovieApp {
             //Logic
             switch (choice) {
 
-                case 1:
-
+                case 1 -> {
                     if (moviesLoaded == false) {
-
                         // will create the movies table if it hasnt been created before
                         databaseCreating.setTableName("movies");
                         databaseCreating.DatabaseCreating();
@@ -103,30 +101,19 @@ public class RentalMovieApp {
                         System.out.println("Rent a movie, by choosing it's number");
                         System.out.println(movies);
                     }
-//     LAReadDBMovies readMovie = new LAReadDBMovies();
-//     readMovie.load();
-//                userChoice = "Rent a movie";
-                    break;
-                case 2:
-                    System.out.println("working on 2");
-
-//                userChoice = "See rented movies";
-                    break;
-                case 3:
-                    System.out.println("working on 3");
-//                userChoice = "Change Password";
-                    break;
-                case 4:
+//                  LAReadDBMovies readMovie = new LAReadDBMovies();
+//                  readMovie.load();
+                }
+                case 2 -> System.out.println("working on 2");
+                case 3 -> System.out.println("working on 3");
+                case 4 -> {
                     System.out.println("You exit, now you are back to main menu:");
-                      MenuLoginSing back = new MenuLoginSing();
-            back.MenuLoginSing();
-//                userChoice = "Exit user menu";
-                    break;
+                    MenuLoginSing back = new MenuLoginSing();
+                    back.MenuLoginSing();
+                }
 //                default:
 //                userChoice = "Option not valid, Please choose one of the above";
             }
-
-            //Output 
-//        System.out.println("You choose" + userChoice);
         }
+    }
 }
