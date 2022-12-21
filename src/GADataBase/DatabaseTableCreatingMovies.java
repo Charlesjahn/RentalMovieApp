@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 /**
  *
- * @Author Gabriel Antoniolli - Movie Database
+ * @author Gabriel Antoniolli - Movie Database
  */
 public class DatabaseTableCreatingMovies {
     public void dataBaseConnMovies(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
