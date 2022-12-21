@@ -9,7 +9,7 @@ import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GADataBase.SavingMovieTable;
 import GAFile.UserMovieOptionsOrganizer;
-import LAuserMenu.LAuserMenu;
+import LAuserMenu.UserMenu;
 import java.util.List;
 
 /**
@@ -36,7 +36,7 @@ public class RentalMovieApp {
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
-        
+
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping
@@ -67,10 +67,11 @@ public class RentalMovieApp {
             }
         }
         /**
-        * If user is valid it here will be the menu for rent movies
+         * If user is valid it here will be the menu for rent movies
          */
         if (userValidateLogin) {
-            LAuserMenu option = new LAuserMenu();
+            UserMenu option = new UserMenu();
+            option.userMenuDecoretor();
             int choice = option.userMenu();
 
             //Logic
@@ -94,7 +95,7 @@ public class RentalMovieApp {
 
                         // sets this variable to true so it wont reload the db if another user logs in
                         moviesLoaded = true;
-                        
+
                         UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
                         movieOrganizer.displayMovies();
                         System.out.println("Rent a movie, by choosing it's number");
@@ -102,12 +103,12 @@ public class RentalMovieApp {
 //                  LAReadDBMovies readMovie = new LAReadDBMovies();
 //                  readMovie.load();
                 }
-                case 2 -> System.out.println("working on 2");
-                case 3 -> System.out.println("working on 3");
+                case 2 ->
+                    System.out.println("working on 2");
+                case 3 ->
+                    System.out.println("working on 3");
                 case 4 -> {
-                    System.out.println("You exit, now you are back to main menu:");
-                    MenuLoginSing back = new MenuLoginSing();
-                    back.MenuLoginSing();
+                    System.out.println("Thank you for using our App!!!\n:D");
                 }
 //                default:
 //                userChoice = "Option not valid, Please choose one of the above";
