@@ -15,28 +15,31 @@ import java.sql.Statement;
  * @author Charles Franklin Jahn
  */
 public class SaveInfoUserPass {
+
+    private boolean newUserName = true;
+
     /**
      * This method will save the user name and password on database
-     * 
+     *
      * @param userName
      * @param userPass
      * @param DB_URL
      * @param USER
      * @param PASS
-     * @param tableName 
+     * @param tableName
      */
     public void insertInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
-            boolean newUserName = true;
+
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "';");
             while (rs.next()) {
                 System.out.println("User Name already exist!!");
-                newUserName = false;
+                this.newUserName = false;
                 break;
             }
-            if (newUserName) {
+            if (this.newUserName) {
                 stmt.execute(
                         String.format("INSERT IGNORE INTO %s (username, password) "
                                 + "VALUES (\"%s\", \"%s\") ;",
