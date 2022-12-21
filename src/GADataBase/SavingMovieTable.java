@@ -5,8 +5,6 @@
 package GADataBase;
 
 import CJFileIO.CSVProcessor;
-import GADataBase.FillingMovieTable;
-import GADataBase.QueryMoviesDB;
 import GAFile.MovieRecords;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +15,8 @@ import java.util.ArrayList;
  */
 public class SavingMovieTable {
 
+    private final CSVProcessor processor = new CSVProcessor();
+    private final FillingMovieTable loader = new FillingMovieTable();
     private final String dbName = "users_passwords";
     private final String DB_URL = "jdbc:mysql://localhost/" + dbName;
     private final String USER = "CA1movieApp";
@@ -24,8 +24,6 @@ public class SavingMovieTable {
     private final String tableName = "movies";
 
     public QueryMoviesDB loadMovieTable() throws IOException {
-        FillingMovieTable loader = new FillingMovieTable();
-        CSVProcessor processor = new CSVProcessor();
         MovieRecords records = processor.processCSV();
         ArrayList<Integer> movieID = records.getAllList().get(0);
         ArrayList<String> original_title = records.getAllList().get(1);
@@ -35,8 +33,9 @@ public class SavingMovieTable {
         ArrayList<String> original_language = records.getAllList().get(5);
 
         for (int i = 0; i < movieID.size(); i++) {
+//            System.out.println(movieID.get(i) + original_title.get(i) + release_date.get(i) + runtime.get(i) + title.get(i) + original_language.get(i));
             loader.load(movieID.get(i), original_title.get(i), release_date.get(i), runtime.get(i), title.get(i), original_language.get(i), DB_URL, USER, PASS, tableName);
         }
-        return new QueryMoviesDB(USER,PASS,DB_URL);
+        return new QueryMoviesDB(USER, PASS, DB_URL);
     }
 }
