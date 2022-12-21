@@ -5,9 +5,9 @@ import java.io.IOException;
 import CJMenuLoginSign.LoopingMenuLoginSignValidation;
 import CJMenuLoginSign.MenuLoginSing;
 import CJMenuLoginSign.UserNamePassword;
-import GADataBase.MovieDisplay;
+import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;
-import GAFile.SavingMovieTable;
+import GADataBase.SavingMovieTable;
 import GAFile.UserMovieOptionsOrganizer;
 import LAuserMenu.LAuserMenu;
 import java.util.List;
@@ -37,6 +37,8 @@ public class RentalMovieApp {
         DatabaseMainProcessor databaseCreating = new DatabaseMainProcessor();
         databaseCreating.setTableName("UserPassword");
         databaseCreating.DatabaseCreating();
+        
+        
         /*
         * Here will Show the menu to login, Sign or Exir
         * While not insert valid input it will keep looping

@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package GAFile;
+package GADataBase;
 
 import CJFileIO.CSVProcessor;
-import GADataBase.LoadMovieTable;
+import GADataBase.FillingMovieTable;
 import GADataBase.QueryMoviesDB;
+import GAFile.MovieRecords;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class SavingMovieTable {
     private final String tableName = "movies";
 
     public QueryMoviesDB loadMovieTable() throws IOException {
-        LoadMovieTable loader = new LoadMovieTable();
+        FillingMovieTable loader = new FillingMovieTable();
         CSVProcessor processor = new CSVProcessor();
         MovieRecords records = processor.processCSV();
         ArrayList<Integer> movieID = records.getAllList().get(0);

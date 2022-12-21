@@ -5,6 +5,7 @@
  */
 package GADataBase;
 
+import GAFile.MovieDisplay;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -40,7 +41,7 @@ public class QueryMoviesDB {
             ResultSet rs = stmt.executeQuery("SELECT * FROM users_passwords.movies;");
             while (rs.next()) {
                 
-                movies.add(new MovieDisplay(rs.getString("title"), rs.getString("runtime"), rs.getString("original_language")));
+                movies.add(new MovieDisplay(rs.getInt("id"), rs.getString("title"), rs.getString("runtime"), rs.getString("original_language")));
             }
         } catch (SQLException e) {
             System.out.println("Any error has occurrend when loading this file: InfoMoviesDB");
@@ -48,7 +49,7 @@ public class QueryMoviesDB {
     }
 
     public List<MovieDisplay> getMovieDisplayLine(){
-    
+        
         return movies;
     }
     

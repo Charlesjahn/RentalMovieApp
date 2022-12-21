@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GADataBase;
+package GAFile;
 
 /**
  *
@@ -11,16 +11,23 @@ package GADataBase;
  */
 public class MovieDisplay {
     
+    int movieID;
     String title;
     String runtime;
     String original_language;
 
-    public MovieDisplay(String title, String runtime, String original_language) {
+    public MovieDisplay(int movieID, String title, String runtime, String original_language) {
+        this.movieID = movieID;
         this.title = title;
         this.runtime = runtime;
         this.original_language = original_language;
     }
 
+    public String getID(){
+    
+        return ("" + movieID + "");
+    }
+    
     public String getTitle() {
         return title;
     }
@@ -31,6 +38,11 @@ public class MovieDisplay {
 
     public String getOriginal_language() {
         return original_language;
+    }
+
+    @Override
+    public String toString() {
+        return "" + movieID + "_ " + title + ", runtime=" + runtime + ", original_language=" + original_language + '}';
     }
     
     
