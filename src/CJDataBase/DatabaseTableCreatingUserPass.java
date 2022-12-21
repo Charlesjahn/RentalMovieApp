@@ -29,7 +29,6 @@ public class DatabaseTableCreatingUserPass {
                     + "idUser INT NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,"
                     + "userName VARCHAR(30) NOT NULL UNIQUE,"
                     + "password TEXT(15) NOT NULL);"
-//                    + "movieRented JSON;"
             );
         } catch (SQLException e) {
             System.out.println("Database not Connected 3");
