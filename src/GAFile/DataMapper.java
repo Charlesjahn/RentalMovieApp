@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @Author Gabriel Antoniolli 
+ * @author Gabriel Antoniolli 
  */
 public class DataMapper {
     
