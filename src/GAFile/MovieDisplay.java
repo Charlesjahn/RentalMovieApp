@@ -12,7 +12,7 @@ package GAFile;
  */
 public class MovieDisplay {
     
-    private final int movieID;
+    final int movieID;
     private final String title;
     private final String runtime;
     private final String original_language;
@@ -30,7 +30,7 @@ public class MovieDisplay {
 
     public String getID(){
     
-        return ("" + movieID + "");
+        return ("" +this.movieID + "");
     }
     
     public String getTitle() {
