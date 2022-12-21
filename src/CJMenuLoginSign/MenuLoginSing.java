@@ -14,17 +14,18 @@ public class MenuLoginSing {
 
     private int option;
     private final Scanner myKB = new Scanner(System.in);
-
+    
+    // It show only the option
     public void MenuLoginSingDecorador() {
         System.out.println("1: Login");
         System.out.println("2: Sign");
         System.out.println("3: Exit");
     }
-
+    // Test if what was typed is a int number
     public boolean MenuLoginSing() {
         try {
             int num = myKB.nextInt();
-            setOption(num);
+            this.option = num;
             return true;
         } catch (Exception e) {
             myKB.nextLine();
@@ -32,16 +33,7 @@ public class MenuLoginSing {
         }
     }
 
-    public void setOption(int option) {
-        this.option = option;
-    }
-
     public int getOption() {
         return option;
     }
-
-    public boolean optionValid(int num) {
-        return num == 1 || num == 2 || num == 3;
-    }
-
 }

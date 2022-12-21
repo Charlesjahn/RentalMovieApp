@@ -12,8 +12,9 @@ public class LoopingMenuLoginSignValidation {
 
     public int loopMenuLoginSignValidation(int n) {
         MenuLoginSing loginSignOption = new MenuLoginSing();
-        loginSignOption.MenuLoginSingDecorador();
-        while (!loginSignOption.optionValid(n)) {
+        ValidateOption valiOpt = new ValidateOption();
+        while (!valiOpt.optionValid(n)) {
+            loginSignOption.MenuLoginSingDecorador();
             while (!loginSignOption.MenuLoginSing()) {
             }
             n = loginSignOption.getOption();
