@@ -15,7 +15,7 @@ import java.sql.Statement;
 
 /**
  *
- * @Author Gabriel Antoniolli - Movie Database
+ * @author Gabriel Antoniolli - Movie Database
  */
 public class FillingMovieTable {
 
