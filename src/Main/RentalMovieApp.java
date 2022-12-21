@@ -113,10 +113,6 @@ public class RentalMovieApp {
 //                userChoice = "See rented movies";
                     break;
                 case 3:
-                    System.out.println("working on 3");
-//                userChoice = "Change Password";
-                    break;
-                case 4:
                     System.out.println("You exit, now you are back to main menu:");
                       MenuLoginSing back = new MenuLoginSing();
             back.MenuLoginSing();
