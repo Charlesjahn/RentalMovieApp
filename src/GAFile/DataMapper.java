@@ -37,6 +37,7 @@ public class DataMapper {
         }
        
         MovieRecords records = new MovieRecords(movieID,original_title, release_date, runtime, title, original_language);
+        
         return records;
     }
 }

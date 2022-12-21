@@ -42,6 +42,7 @@ public class QueryMoviesDB {
             while (rs.next()) {
                 
                 movies.add(new MovieDisplay(rs.getInt("id"), rs.getString("title"), rs.getString("runtime"), rs.getString("original_language")));
+       
             }
         } catch (SQLException e) {
             System.out.println("Any error has occurrend when loading this file: InfoMoviesDB");

@@ -9,6 +9,7 @@ import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GADataBase.SavingMovieTable;
 import GAFile.UserMovieOptionsOrganizer;
+import LAdbRentedMovies.DBRentedMovies;
 import LAuserMenu.UserMenu;
 import java.util.List;
 
@@ -96,21 +97,30 @@ public class RentalMovieApp {
                         // sets this variable to true so it wont reload the db if another user logs in
                         moviesLoaded = true;
 
-                        UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
+                        for (MovieDisplay md : movies) {
+
+                            System.out.println(md);
+                        }
+
+                        /* UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
                         movieOrganizer.displayMovies();
                         System.out.println("Rent a movie, by choosing it's number");
+                         */
                     }
 //                  LAReadDBMovies readMovie = new LAReadDBMovies();
 //                  readMovie.load();
+                    break;
                 }
-                case 2 ->
+
+                case 2 -> {
                     System.out.println("working on 2");
-                case 3 ->
-                    System.out.println("working on 3");
-                case 4 -> {
-                    System.out.println("Back to main menu!");
-                    MenuLoginSing back = new MenuLoginSing();
-                    back.MenuLoginSing();
+                    DBRentedMovies rented = new DBRentedMovies();
+                    rented.addMovie();
+                    break;
+                }
+
+                case 3 -> {
+                    System.out.println("Thank you for using our app");
                     break;
                 }
 //                default:

@@ -24,9 +24,7 @@ public class UserMenu {
         System.out.println("\nUser Menu");
         System.out.println("1: Rent a movie");
         System.out.println("2: See rented movies");
-        System.out.println("3: Change Password");
-        System.out.println("4: Exit!");
-        System.out.println("\nChoose an option above:");
+        System.out.println("3: Exit");
     }
 
 }
