@@ -16,6 +16,15 @@ import java.util.List;
  * @author Charles Franklin Jahn 2020315
  */
 public class DataInput {
+    
+    /**
+     * Load the File with the info of all movie
+     * 
+     * @param InputFile
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     public List<String> InputData(String InputFile) throws FileNotFoundException, IOException {
         BufferedReader myReader = new BufferedReader(new FileReader(InputFile));
         List<String> lines = new ArrayList<>();
