@@ -14,12 +14,12 @@ import java.util.List;
  */
 public class DataMapper {
     
-    ArrayList<Integer> movieID = new ArrayList<>();
-    ArrayList<String> original_title = new ArrayList<>();
-    ArrayList<String> release_date = new ArrayList<>();
-    ArrayList<String> runtime = new ArrayList<>();
-    ArrayList<String> title = new ArrayList<>();
-    ArrayList<String> original_language = new ArrayList<>();
+    private final ArrayList<Integer> movieID = new ArrayList<>();
+    private final ArrayList<String> original_title = new ArrayList<>();
+    private final ArrayList<String> release_date = new ArrayList<>();
+    private final ArrayList<String> runtime = new ArrayList<>();
+    private final ArrayList<String> title = new ArrayList<>();
+    private final ArrayList<String> original_language = new ArrayList<>();
     
     public MovieRecords map(List<String> lines){
     
