@@ -25,7 +25,6 @@ public class UserNamePassword {
             if (emailFormart.emailFormatcheck(userEmailTest)) {
                 this.userEmail = userEmailTest;
                 this.emailIsfine = true;
-
             } else {
                 this.userEmail = "";
             }
