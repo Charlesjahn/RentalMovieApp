@@ -11,10 +11,10 @@ package GAFile;
  */
 public class MovieDisplay {
     
-    int movieID;
-    String title;
-    String runtime;
-    String original_language;
+    private final int movieID;
+    private final String title;
+    private final String runtime;
+    private final String original_language;
 
     public MovieDisplay(int movieID, String title, String runtime, String original_language) {
         this.movieID = movieID;
