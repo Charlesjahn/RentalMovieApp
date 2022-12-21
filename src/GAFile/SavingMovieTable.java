@@ -18,10 +18,8 @@ public class SavingMovieTable {
 
     private final String dbName = "users_passwords";
     private final String DB_URL = "jdbc:mysql://localhost/" + dbName;
-//    private final String USER = "CA1movieApp";
-//    private final String PASS = "CA1movieApp";
-    private final String USER = "test";
-    private final String PASS = "";
+    private final String USER = "CA1movieApp";
+    private final String PASS = "CA1movieApp";
     private final String tableName = "movies";
 
     public QueryMoviesDB loadMovieTable() throws IOException {

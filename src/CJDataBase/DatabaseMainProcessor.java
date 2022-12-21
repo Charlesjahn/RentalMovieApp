@@ -4,6 +4,8 @@
  */
 package CJDataBase;
 
+import GADataBase.DatabaseTableCreatingMovies;
+
 /**
  *
  * @author Charles Franklin Jahn
@@ -11,6 +13,7 @@ package CJDataBase;
 public class DatabaseMainProcessor {
 
     private final DatabaseTableCreatingUserPass createTable = new DatabaseTableCreatingUserPass();
+    private final DatabaseTableCreatingMovies createMovieTable = new DatabaseTableCreatingMovies();
     private final DataBaseInfoUserPass dbInfo = new DataBaseInfoUserPass();
     private final SaveInfoUserPass saveInfo = new SaveInfoUserPass();
     private final String dbName = "users_passwords";
@@ -23,7 +26,7 @@ public class DatabaseMainProcessor {
         if ("UserPassword".equals(tableName)) {
             createTable.dataBaseConnUser(dbName, USER, PASS, tableName);
         } else if ("movies".equals(tableName)) {
-            createTable.dataBaseConnMovie(dbName, USER, PASS, tableName);
+            createMovieTable.dataBaseConnMovies(dbName, USER, PASS, tableName);
         }
     }
 
