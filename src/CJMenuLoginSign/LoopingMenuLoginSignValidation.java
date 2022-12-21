@@ -9,7 +9,12 @@ package CJMenuLoginSign;
  * @author Charles Franklin Jahn
  */
 public class LoopingMenuLoginSignValidation {
-
+    /**
+     * Loop to make sure that the user's input will be valid#
+     * 
+     * @param n
+     * @return option
+     */
     public int loopMenuLoginSignValidation(int n) {
         MenuLoginSing loginSignOption = new MenuLoginSing();
         ValidateOption valiOpt = new ValidateOption();
