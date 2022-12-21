@@ -15,7 +15,16 @@ import java.sql.Statement;
  * @author Charles Franklin Jahn
  */
 public class SaveInfoUserPass {
-
+    /**
+     * This method will save the user name and password on database
+     * 
+     * @param userName
+     * @param userPass
+     * @param DB_URL
+     * @param USER
+     * @param PASS
+     * @param tableName 
+     */
     public void insertInfoUserPass(String userName, String userPass, String DB_URL, String USER, String PASS, String tableName) {
         try {
             boolean newUserName = true;
@@ -35,7 +44,7 @@ public class SaveInfoUserPass {
                 );
             }
         } catch (SQLException e) {
-            System.out.println("Database not Connected 4");
+            System.out.println("Error in saving the user name and/or password!");
         }
     }
 }

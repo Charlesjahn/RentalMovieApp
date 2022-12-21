@@ -17,6 +17,18 @@ import java.sql.Statement;
  */
 public class DatabaseTableCreatingUserPass {
 
+    /**
+     * this method will create the table for the username and password in case
+     * it does not exist
+     *
+     * @param dbName
+     * @param USER
+     * @param PASS
+     * @param tableName
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public void dataBaseConnUser(String dbName, String USER, String PASS, String tableName) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         try {
@@ -31,7 +43,7 @@ public class DatabaseTableCreatingUserPass {
                     + "password TEXT(15) NOT NULL);"
             );
         } catch (SQLException e) {
-            System.out.println("Database not Connected 3");
+            System.out.println("Error in creating the table of the user and password.\nMaybe the database named 'UserPassword' doest not exist!");
         }
     }
 

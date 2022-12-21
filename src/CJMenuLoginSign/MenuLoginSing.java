@@ -28,7 +28,7 @@ public class MenuLoginSing {
             this.option = num;
             return true;
         } catch (Exception e) {
-            myKB.nextLine();
+            myKB.nextLine(); //clean the variable input
             return false;
         }
     }
