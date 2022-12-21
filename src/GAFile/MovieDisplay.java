@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,6 +22,10 @@ public class MovieDisplay {
         this.title = title;
         this.runtime = runtime;
         this.original_language = original_language;
+    }
+
+    public MovieDisplay() {
+        
     }
 
     public String getID(){
