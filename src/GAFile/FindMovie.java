@@ -6,6 +6,7 @@
 package GAFile;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,19 +15,25 @@ import java.util.ArrayList;
 public class FindMovie {
     
     
-    private int movieId;
-    private ArrayList<MovieDisplay> movies;
+    private int movieID;
+    private List<MovieDisplay> movies;
     
-    public FindMovie(int movieID,   ArrayList<MovieDisplay> movies){
+    public FindMovie(int movieID, List<MovieDisplay> movies){
     
-        this.movieId = movieID;
+        this.movieID = movieID;
         this.movies = movies;
     }
     
     
     public MovieDisplay getMovieForRent(){
     
+    for(MovieDisplay md : movies){
     
-        return movies.get(movieId);
+        if(md.movieID == movieID){
+        
+            return md;
+        } 
+    }
+        return null;
     }
 }

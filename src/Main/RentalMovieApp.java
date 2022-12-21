@@ -8,10 +8,13 @@ import CJMenuLoginSign.UserNamePassword;
 import GAFile.MovieDisplay;
 import GADataBase.QueryMoviesDB;
 import GADataBase.SavingMovieTable;
+import GAFile.FindMovie;
 import GAFile.UserMovieOptionsOrganizer;
 import LAdbRentedMovies.DBRentedMovies;
 import LAuserMenu.UserMenu;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -70,61 +73,75 @@ public class RentalMovieApp {
         /**
          * If user is valid it here will be the menu for rent movies
          */
+
         if (userValidateLogin) {
-            UserMenu option = new UserMenu();
-            option.userMenuDecoretor();
-            int choice = option.userMenu();
+//            List to store rented Movies
+            List<MovieDisplay> movies = new ArrayList<MovieDisplay>();
+            int temp = 0;
+            DBRentedMovies rented = new DBRentedMovies(movies);
+//            loop to keep displaying menu 
+            while (temp != 3) {
+                UserMenu option = new UserMenu();
+                option.userMenuDecoretor();
+                int choice = option.userMenu();
 
-            //Logic
-            switch (choice) {
+                //switch logic 
+                switch (choice) {
 
-                case 1 -> {
-                    if (moviesLoaded == false) {
-                        // will create the movies table if it hasnt been created before
-                        databaseCreating.setTableName("movies");
-                        databaseCreating.DatabaseCreating();
+                    case 1 -> {
 
-                        //Start filling the table with the data read from the .csv file
-                        SavingMovieTable movieTable = new SavingMovieTable();
+                        if (moviesLoaded == false) {
+                            // will create the movies table if it hasnt been created before
+                            databaseCreating.setTableName("movies");
+                            databaseCreating.DatabaseCreating();
 
-                        // start retrieving the data from the db to a variable called movies
-                        QueryMoviesDB movieQuery = movieTable.loadMovieTable();
-                        movieQuery.GetAllMovies();
+                            //Start filling the table with the data read from the .csv file
+                            SavingMovieTable movieTable = new SavingMovieTable();
 
-                        // movies has the title, runtime, and original_language properties to each movie
-                        List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
+                            // start retrieving the data from the db to a variable called movies
+                            QueryMoviesDB movieQuery = movieTable.loadMovieTable();
+                            movieQuery.GetAllMovies();
 
-                        // sets this variable to true so it wont reload the db if another user logs in
-                        moviesLoaded = true;
+                            // movies has the title, runtime, and original_language properties to each movie
+                            movies = movieQuery.getMovieDisplayLine();
 
-                        for (MovieDisplay md : movies) {
+                            // sets this variable to true so it wont reload the db if another user logs in
+                            moviesLoaded = true;
 
-                            System.out.println(md);
+//                            loop to choose movie 
+                            for (MovieDisplay md : movies) {
+
+                                System.out.println(md);
+                                System.out.println("Choose a Movie id:");
+
+                            }
+//                          scanner to get user input
+                            Scanner userInput = new Scanner(System.in);
+                            int rentMovie = userInput.nextInt();
+                            FindMovie findMovieId = new FindMovie(rentMovie, movies);
+                            MovieDisplay selectedMovie = findMovieId.getMovieForRent();
+                            rented.addMovie(selectedMovie);
+//                            output user input for test purpose 
+                            System.out.println("The movie: " + selectedMovie.getTitle() + " was rented by: " + userInfoIniti.getUserName() + " Costing 5 euros");
+//                            comeback to choice
+                            option.userMenuDecoretor();
                         }
 
-                        /* UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
-                        movieOrganizer.displayMovies();
-                        System.out.println("Rent a movie, by choosing it's number");
-                         */
+//          break;
                     }
-//                  LAReadDBMovies readMovie = new LAReadDBMovies();
-//                  readMovie.load();
-                    break;
-                }
+//                    second case, to see rented movies
+                    case 2 -> {
 
-                case 2 -> {
-                    System.out.println("working on 2");
-                    DBRentedMovies rented = new DBRentedMovies();
-                    rented.addMovie();
-                    break;
-                }
+                        rented.showMoviesRented();
+                        break;
+                    }
+//                    third case, exit program
+                    case 3 -> {
+                        System.out.println("Thank you for using our app");
+                        break;
+                    }
 
-                case 3 -> {
-                    System.out.println("Thank you for using our app");
-                    break;
                 }
-//                default:
-//                userChoice = "Option not valid, Please choose one of the above";
             }
         }
     }

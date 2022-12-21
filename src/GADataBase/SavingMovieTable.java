@@ -14,6 +14,7 @@ import java.util.ArrayList;
 /**
  *
  * @Author Gabriel Antoniolli - Movie Database
+ * @author Luiza Albuquerque 2020309
  */
 public class SavingMovieTable {
 

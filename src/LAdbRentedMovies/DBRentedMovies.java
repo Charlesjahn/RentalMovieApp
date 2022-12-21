@@ -4,11 +4,14 @@
  */
 package LAdbRentedMovies;
 
+import GAFile.MovieDisplay;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,19 +19,31 @@ import java.sql.Statement;
  */
 public class DBRentedMovies {
 
-    private final String dbName = "users_passwords";
-    private final String DB_URL = "jdbc:mysql://localhost/" + dbName;
-    private final String USER = "CA1movieApp";
-    private final String PASS = "CA1movieApp";
-    private String tableName = "UserPasswor";
+//    creating list of rented movies
+    List<MovieDisplay> movies;
 
-    public void addMovie() {
-        try {
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement stmt = conn.createStatement();
-//            stmt.executeQuery("SELECT * from " + tableName + " WHERE userName = '" + userName + "' ;");
+    public DBRentedMovies(List<MovieDisplay> movies) {
+        this.movies = movies;
 
-        } catch (SQLException e) {
+    }
+
+//    Method to add rented movies to list 
+    public void addMovie(MovieDisplay movieRented) {
+
+        movies.add(movieRented);
+
+    }
+//  Method to show rented movies to user 
+    public void showMoviesRented() {
+
+//        in case, th list is empty (= 0), output message to user that there isn't any movies to rent  
+        if (movies.size() == 0) {
+            System.out.println("not movies were rented yet");
         }
+//        loop to output rented movies list 
+        for (MovieDisplay md : movies) {
+            System.out.println(md);
+        }
+
     }
 }
