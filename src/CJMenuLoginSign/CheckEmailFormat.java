@@ -6,20 +6,16 @@ package CJMenuLoginSign;
 
 /**
  *
- * @author charl
+ * @author Charles Franklin Jahn 2020315
  */
 public class CheckEmailFormat {
 
     public boolean emailFormatcheck(String email) {
-        if (email.contains("@cct.ie")) {
-            System.out.println(email);
-            return true;
-
-        } else {
+        if (!email.contains("@cct.ie")) {
             System.out.println("Your email must be 'exemple'@cct.ie");
-            System.out.println(email);
             return false;
+        } else {
+            return true;
         }
-
     }
 }
