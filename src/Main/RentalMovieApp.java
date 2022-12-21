@@ -91,14 +91,14 @@ public class RentalMovieApp {
                         movieQuery.GetAllMovies();
 
                         // movies has the title, runtime, and original_language properties to each movie
-//                        List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
+                        List<MovieDisplay> movies = movieQuery.getMovieDisplayLine();
 //
 //                        // sets this variable to true so it wont reload the db if another user logs in
-//                        moviesLoaded = true;
+                        moviesLoaded = true;
 //
-//                        UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
-//                        movieOrganizer.displayMovies();
-//                        System.out.println("Rent a movie, by choosing it's number");
+                        UserMovieOptionsOrganizer movieOrganizer = new UserMovieOptionsOrganizer(movies);
+                        movieOrganizer.displayMovies();
+                        System.out.println("Rent a movie, by choosing it's number");
                     }
 //                  LAReadDBMovies readMovie = new LAReadDBMovies();
 //                  readMovie.load();
