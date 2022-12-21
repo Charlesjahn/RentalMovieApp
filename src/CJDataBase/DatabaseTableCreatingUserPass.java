@@ -12,7 +12,6 @@ import java.sql.Statement;
 /**
  *
  * @author Charles Franklin Jahn dataBaseConnUser
- * @Author Gabriel Antoniolli dataBaseConnMovie
  *
  */
 public class DatabaseTableCreatingUserPass {
