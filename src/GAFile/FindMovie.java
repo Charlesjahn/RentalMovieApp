@@ -5,7 +5,6 @@
  */
 package GAFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,8 +14,8 @@ import java.util.List;
 public class FindMovie {
     
     
-    private int movieID;
-    private List<MovieDisplay> movies;
+    private final int movieID;
+    private final List<MovieDisplay> movies;
     
     public FindMovie(int movieID, List<MovieDisplay> movies){
     
